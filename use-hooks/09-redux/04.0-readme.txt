@@ -1,0 +1,10 @@
+you can cause side effects either inside 'reducer' or inside 'useEffect' hook.
+
+1. how to make side effect inside useEffect ?
+    refer 03-useEffext folder code snippets and 09-redux/04-redux-toolkit-useEffect.jsx
+
+2. How to make side effects inside reducer ?    
+    you should be using a thunk function which will act as a middleware.
+    It works before the action is dispatched to reducer.
+    component dispatches action => thunk function => reducer
+    So Inside thunk funciton, you can execute any async tasks and then dispatch function.
