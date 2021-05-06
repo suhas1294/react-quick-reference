@@ -1,0 +1,31 @@
+npm install bit-bin -g
+bit init
+bit login
+
+// start tracking the button in your project
+bit add ./src/components/Button
+
+// package.json
+"peerDependencies": {
+     "react": "^16.13.1",
+     "react-dom": "^16.13.1",
+     "react-scripts": "3.4.0",
+     "node-sass": "^4.13.1"
+ },
+
+// To add compiler for React Components
+bit import bit.envs/compilers/react — compiler
+
+
+//  to check status
+bit status
+
+// versioning
+bit tag --all 0.0.1
+
+// exporting
+bit export <username>.<collection>
+
+// importing
+npm install --save @bit/vpilip.bittutorial.button
+import Button from '@bit/vpilip.bittutorial.button'
