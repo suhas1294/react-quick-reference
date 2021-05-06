@@ -1,0 +1,17 @@
+Resources:
+    https://testing-library.com/docs/queries/about/#types-of-queries
+    https://www.w3.org/TR/wai-aria/#role_definitions
+
+
+How does jest work ?
+there is a global test method which accepts 2 arguments : string description, test function
+if there is an error, test fails, else passes:
+    test('test name 1', () => {throw new Error('this test fails')})
+    test('test name 2', () => {}) // this will pass
+
+
+useful Extensions/plugins
+    ESLint is a linter
+    prettier is a formatter
+    npm install eslint-plugin-testing-library eslint-library-jest-dom
+    src/.eslint.src.json
