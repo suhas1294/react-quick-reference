@@ -1,0 +1,47 @@
+{
+    company(id: '1'){
+        name,
+        description
+    }
+}
+# --------------------
+query {
+    company(id: '1'){
+        name,
+        description
+    }
+}
+# --------------------
+query findCompany{
+    company(id: '1'){
+        name,
+        description
+    }
+}
+# --------------------
+{
+    apple: company(id: '1'){
+        name,
+        description
+    }
+    google: company(id: '12'){
+        name,
+        description
+    }
+}
+# --------------------
+# query fragments (to avoid duplicates in the query)
+
+fragment companyDetails on Company{
+    id,
+    name,
+    description
+}
+query{
+    apple: company(id: '2'){
+        ...companyDetials
+    },
+    google: company(id: '23'){
+        ...companyDetials
+    }
+}

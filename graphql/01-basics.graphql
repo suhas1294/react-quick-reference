@@ -1,0 +1,20 @@
+# 1. get a user with id 23
+# 2. get all his friends
+# 3. get their companies
+# 4. get the names of those companies
+
+query{
+    user(id: 23){
+        friends{
+            company{
+                name
+            }
+        }
+    }
+}
+
+# mkdir users
+# cd users
+# npm init 
+# npm i --save express express-graphql graphql lodash
+

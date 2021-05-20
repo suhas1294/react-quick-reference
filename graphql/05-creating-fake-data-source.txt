@@ -1,0 +1,20 @@
+1. npm i --save json-server
+2. touch db.json
+3. add all data into db.json file
+4. In package.json, scripts object, add one more option:
+    "json:server": "json-server --watch db.json"
+5. npm run json:serever
+
+
+content of db.json:
+
+{
+    "users": [
+        {id: '22', firstName: 'Bill', age: 34},
+        {id: '35', firstName: 'John', age: 45},
+        {id: '34', firstName: 'Doe', age: 56}
+    ]
+}
+
+6. Delete hard coded data inside schema.json
+7. Fake server is created.

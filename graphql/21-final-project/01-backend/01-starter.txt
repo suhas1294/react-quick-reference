@@ -1,0 +1,13 @@
+clone the repo: (its a boilerplate code)
+    https://github.com/StephenGrider/auth-graphql-starter
+
+server side dependencies:
+    cost expressGraphQL = require('express-graphql');
+
+Types:
+    User
+
+Mutations
+    signup
+    login
+    logout

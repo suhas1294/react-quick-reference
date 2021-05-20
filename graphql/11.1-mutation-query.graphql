@@ -1,0 +1,8 @@
+mutation {
+    # inside curly braces, we write what values we need to get back, i.e., the data that comes from resolve function
+    adduser(firstName: "john", age: 23){
+        id
+        firstName
+        age
+    }
+}

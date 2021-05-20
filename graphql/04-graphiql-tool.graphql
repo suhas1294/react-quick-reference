@@ -1,0 +1,8 @@
+{
+    user(id: 23){ #ask graphql to look through users and find user with an id 23
+        # once user with requested id is found, give me all below properties of that object
+        id, 
+        firstName,
+        age
+    }
+}

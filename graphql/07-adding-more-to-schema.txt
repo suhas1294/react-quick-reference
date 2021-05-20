@@ -1,0 +1,16 @@
+adding following content to db.json:
+
+{
+    "users": [
+        {id: '22', firstName: 'Bill', "age": 34, "companyId": 12 },
+        {id: '35', firstName: 'John', "age": 45, "companyId": 34 },
+        {id: '34', firstName: 'Doe', "age": 56, "companyId": 12 }
+    ],
+    "companies": [
+        {"id": "12", "name": "Apple", "description": "iphone"},
+        {"id": "34", "name": "Amazon", "description": "ecommerce"},
+        {"id": "45", "name": "google", "description": "cloud"},
+    ]
+}
+
+http://localhost:3000/companies/12/users
