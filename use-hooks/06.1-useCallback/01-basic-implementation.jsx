@@ -1,3 +1,7 @@
+// Its mainly used to prevent infinite loop
+// say you have create a nested component and passing a callback from parent component to child component
+// whenever parent component re-renders, call back will be re-created in child component resulting in infinite loop.
+
 import React, { useState, useCallback } from 'react';
 
 function App() {

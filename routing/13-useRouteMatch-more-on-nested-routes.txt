@@ -1,0 +1,41 @@
+POST_DETAILS_URL = http://localhost:8080/posts/12
+POST_DETAILS_WITH_COMMENTS_URL = http://localhost:8080/posts/12/comments
+
+Requirement:
+    POST_DETAILS_URL shows details about a particular post, lets say component name is <PostDetail />
+    Now, when we want to show comments of that post in same page, then we need to navigate to POST_DETAILS_WITH_COMMENTS_URL
+
+How do we do that ?
+1. provide a nested <Route> component in POST_DETAILS_URL page called "Load commments"
+2. Write a nested route inside <PostDetail /> like :
+    <Route path={`quotes/${params.quoteId}/comments`}>
+        <Comments />
+    </Route>
+3. when clicked on 'Load comments' link, write a handler and make use of history object to programatically naviate to 'http://localhost:8080/posts/12/comments'
+4. Now when user is navigated to 'POST_DETAILS_WITH_COMMENTS_URL', "Load Comments" should not be shown - This can be achieved by adding following code inside <PostDetail /> component as below:
+  <Route path={`/quotes/${params.quoteId}`} exact>
+      <div className='centered'>
+          <Link className='btn--flat' to={`quotes/${params.quoteId / comments`}>
+              Load Comments
+          </Link>
+      </div>
+  </Route>
+5. So that when user navigates to POST_DETAILS_WITH_COMMENTS_URL, "load comments" will disappear.
+6. If main route is changes in app.js, then we need to change in nested route as well since its hardcoded.
+To avoid this, we use UseRouteMatch .
+
+<Route path={`${match.path}/comments`}>
+    <Comments />
+</Route>
+
+<Route path={match.path} exact>
+  <div className='centered'>
+    <Link className='btn--flat' to={`${match.url}/comments`}>
+      Load Comments
+    </Link>
+  </div>
+</Route>
+
+note: 
+//   match.url : actaul url in browser : ex : localhost:8080/quotes/q2/comments
+//   match.path : react code for url : ex : localhost:8080/quotes/:quoteId/comments

@@ -1,0 +1,8 @@
+(react-router-dom internally contains react-router)
+npm i --save react-router-dom
+
+
+/           -> Component A
+/products   -> Component B
+
+we need to conditional render component based on paths in url.
