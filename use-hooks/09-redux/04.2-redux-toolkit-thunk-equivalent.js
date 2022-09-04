@@ -3,14 +3,14 @@
 So when we are using redux-toolkit, We knew that for dispatching, we do this:
 dispatch(somefunc()) which will ideally return an object like this : {type: '', payload: {}}
 
-But, We can also execute a function inside dispatch function - which will return a function instead of above object.
+But, We can also execute a function inside dispatch function - which will return a function instead of above object. that function will get dispatch as argument (managed by redux)
 
 So what will that function do ?
 ex:
 dispatch(someOtherFunc()) */
 
 const someOtherFunc = (customPayload) => {
-    return async () => { // note that , the function u are returning can also be async
+    return async (dispatch) => { // note that , the function u are returning can also be async
 
         // step-0 : optional (in case there are multiple dispatches along with side effect)
         dispatch(compActions.showNotifications({
